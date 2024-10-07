@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://chn4jwb1y7ce1"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_6lw67"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_egn54"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_eiqlg"]
+height = 1.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vcpio"]
+
+[node name="Node3D" type="CharacterBody3D" groups=["Player"]]
+script = ExtResource("1_6lw67")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_egn54")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 5.46392e-09, 1.3, -0.124204)
+mesh = SubResource("CapsuleMesh_eiqlg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_vcpio")
+
+[node name="LookAt" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
